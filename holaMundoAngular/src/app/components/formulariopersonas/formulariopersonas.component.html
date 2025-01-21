@@ -1,1 +1,47 @@
-<p>formulariopersonas works!</p>
+<style>
+    .formulario {
+        background-color: antiquewhite;
+        padding: 10px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        max-width: 500px;
+        margin: auto;
+    }
+
+    h3 {
+        text-align: center;
+    }
+
+    label {
+        margin-bottom: 5px;
+    }
+
+    input {
+        margin-bottom: 10px;
+        padding: 5px;
+        font-size: 14px;
+    }
+
+    button {
+        padding: 10px;
+        font-size: 14px;
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        cursor: pointer;
+    }
+
+    button:hover {
+        background-color: #45a049;
+    }
+</style>
+
+<div class="formulario">
+    <h3>Añadir persona</h3>
+    <label for="name">Nombre:</label>
+    <input type="text" name="name" id="name" placeholder="Amaro">
+    <label for="lastname">Apellido:</label>
+    <input type="text" name="lastname" id="lastname" placeholder="Suárez">
+    <button id="send">Guardar</button>
+</div>
