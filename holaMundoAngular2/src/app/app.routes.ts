@@ -4,7 +4,7 @@ import { HomeComponent } from './components/home/home.component';
 import { TablapersonasComponent } from './components/tablapersonas/tablapersonas.component';
 
 export const routes: Routes = [
-    {path: '', redirectTo: 'tabla', pathMatch: 'full'},
+    {path: '', redirectTo: 'home', pathMatch: 'full'},
     {path: 'home', component: HomeComponent},
     {path: 'tabla', component: TablapersonasComponent},
     {path: 'formulario', component: FormulariopersonasComponent},

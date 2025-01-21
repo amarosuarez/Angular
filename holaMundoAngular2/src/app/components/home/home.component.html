@@ -1,0 +1,21 @@
+<p>home works!</p>
+
+<!-- Enlaces de navegación -->
+<li>
+  <a routerLink="/tabla" routerLinkActive="active" ariaCurrentWhenActive="page">
+    Tabla
+  </a>
+</li>
+<li>
+  <a routerLink="/formulario" routerLinkActive="active" ariaCurrentWhenActive="page">
+    Abrir formulario
+  </a>
+</li>
+
+<!-- Botones de navegación dinámica -->
+<button type="button" class="btn btn-primary-outline pull-right" (click)="btnClick('/tabla')">
+  Ir a tabla
+</button>
+<button type="button" class="btn btn-primary-outline pull-right" (click)="btnClick('/formulario')">
+  Ir a formulario
+</button>
