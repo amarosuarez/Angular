@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
 })
 export class TablapersonasComponent {
   constructor(private router: Router) {}
-  btnClick(route: string): any {
-    this.router.navigateByUrl(route);
+  btnClick(): any {
+    this.router.navigateByUrl('/home');
   }
 }

@@ -1,10 +1,19 @@
-<div class="formulario">
-    <h3>Añadir persona</h3>
-    <label for="name">Nombre:</label>
-    <input type="text" name="name" id="name" placeholder="Amaro">
-    <label for="lastname">Apellido:</label>
-    <input type="text" name="lastname" id="lastname" placeholder="Suárez">
-    <button id="send">Guardar</button>
-</div>
+<form [formGroup]="formulario">
+    <p>
+        <span>Nombre:</span>
+        <input type="text" id="nombre" formControlName="nombre" />
+        <span *ngIf="(formulario.controls.nombre.dirty || formulario.controls.nombre.touched)
+&&this.formulario.controls.nombre.errors?.['required']">El nombre es
+            obligatorio</span>
+    </p>
+    <p>
+        <span>Apellidos:</span>
+        <input type="text" formControlName="apellidos" />
+        <span *ngIf="(formulario.controls.apellidos.dirty || formulario.controls.apellidos.touched)
+&&this.formulario.controls.apellidos.errors?.['required']">El apellido es
+            obligatorio</span>
+    </p>
+    <button type="button" (click)="saluda()">Saludar</button>
+</form>
 
 <li><a routerLink="" routerLinkActive="active" ariaCurrentWhenActive="page">Volver a home</a></li>
