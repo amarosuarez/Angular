@@ -48,6 +48,19 @@ export class DialogOverviewExampleDialog {
   readonly fechaNacimientoPersona = model(this.data.fechaNacimiento);
   readonly idDepartamentoPersona = model(this.data.idDepartamento);
 
+  get getPersona() {
+    const formattedDate = new Date(this.fechaNacimientoPersona());
+    return {
+      nombre: this.nombrePersona(),
+      apellidos: this.apellidosPersona(),
+      direccion: this.direccionPersona(),
+      foto: this.fotoPersona(),
+      telefono: this.telefonoPersona(),
+      fechaNacimiento: formattedDate,
+      idDepartamento: this.idDepartamentoPersona(),
+    };
+  }
+
   onNoClick(): void {
     this.dialogRef.close();
   }
@@ -76,16 +89,17 @@ export class TablaComponent {
   readonly dialog = inject(MatDialog);
   openDialog(): void {
     const dialogRef = this.dialog.open(DialogOverviewExampleDialog, {
-      data: {name: this.name(), animal: this.animal()},
+      data: { name: this.name(), animal: this.animal() },
     });
-
-    dialogRef.afterClosed().subscribe(result => {
+  
+    dialogRef.afterClosed().subscribe((persona: Persona | undefined) => {
       console.log('The dialog was closed');
-      if (result !== undefined) {
-        this.animal.set(result);
+      if (persona) {
+        this.addPersona(persona);
       }
     });
   }
+  
 
   async obtenerPersonas() {
     this.personasServicio.getPersonas().subscribe({
@@ -98,10 +112,23 @@ export class TablaComponent {
 
       error: (error) => {
 
-        alert("Ha ocurrido un error al obtener los datos del servidor");
+        alert("Ha ocurrido un error al obtener los datos del servidor " + error);
       
       }
 
+    });
+  }
+
+  async addPersona(persona: Persona) {
+    this.personasServicio.createPersona(persona).subscribe({
+      next: (response) => {
+        alert("Persona añadida");
+        this.obtenerPersonas();
+      },
+      error: (error) => {
+        alert("Ha ocurrido un error al agregar la persona");
+        console.error(error);
+      }
     });
   }
 }

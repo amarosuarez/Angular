@@ -10,11 +10,6 @@
         <mat-label>Martínez Sánchez</mat-label>
         <input matInput [(ngModel)]="apellidosPersona" />
     </mat-form-field>
-    <p>¿Cuales son sus apellidos?</p>
-    <mat-form-field>
-        <mat-label>Martínez Sánchez</mat-label>
-        <input matInput [(ngModel)]="apellidosPersona" />
-    </mat-form-field>
     <p>¿Cuál es su dirección?</p>
     <mat-form-field>
         <mat-label>Calle Profesor Dumbledore, 1</mat-label>
@@ -32,8 +27,8 @@
     </mat-form-field>
     <p>¿Cuál es su fecha de nacimiento?</p>
     <mat-form-field>
-        <mat-label>12/08/2004</mat-label>
-        <input matInput [(ngModel)]="fechaNacimientoPersona" />
+        <mat-label>Fecha de nacimiento</mat-label>
+        <input matInput type="date" [(ngModel)]="fechaNacimientoPersona" />
     </mat-form-field>
     <p>¿Cuál es su id de departamento?</p>
     <mat-form-field>
@@ -43,7 +38,7 @@
 </mat-dialog-content>
 <mat-dialog-actions>
     <button mat-button (click)="onNoClick()">No Thanks</button>
-    <button mat-button [mat-dialog-close]="persona()" cdkFocusInitial>Añadir</button>
+    <button mat-button [mat-dialog-close]="getPersona" cdkFocusInitial>Añadir</button>
 </mat-dialog-actions>
 
 
