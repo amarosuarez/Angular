@@ -1,0 +1,52 @@
+<h2 mat-dialog-title>Añadir nueva persona</h2>
+<mat-dialog-content>
+    <p>¿Cuál es su nombre?</p>
+    <mat-form-field>
+        <mat-label>Pedro</mat-label>
+        <input matInput [(ngModel)]="nombrePersona" />
+    </mat-form-field>
+    <p>¿Cuales son sus apellidos?</p>
+    <mat-form-field>
+        <mat-label>Martínez Sánchez</mat-label>
+        <input matInput [(ngModel)]="apellidosPersona" />
+    </mat-form-field>
+    <p>¿Cuales son sus apellidos?</p>
+    <mat-form-field>
+        <mat-label>Martínez Sánchez</mat-label>
+        <input matInput [(ngModel)]="apellidosPersona" />
+    </mat-form-field>
+    <p>¿Cuál es su dirección?</p>
+    <mat-form-field>
+        <mat-label>Calle Profesor Dumbledore, 1</mat-label>
+        <input matInput [(ngModel)]="direccionPersona" />
+    </mat-form-field>
+    <p>Añade la url de su foto</p>
+    <mat-form-field>
+        <mat-label>Foto url</mat-label>
+        <input matInput [(ngModel)]="fotoPersona" />
+    </mat-form-field>
+    <p>¿Cuál es su teléfono?</p>
+    <mat-form-field>
+        <mat-label>666333444</mat-label>
+        <input matInput [(ngModel)]="telefonoPersona" />
+    </mat-form-field>
+    <p>¿Cuál es su fecha de nacimiento?</p>
+    <mat-form-field>
+        <mat-label>12/08/2004</mat-label>
+        <input matInput [(ngModel)]="fechaNacimientoPersona" />
+    </mat-form-field>
+    <p>¿Cuál es su id de departamento?</p>
+    <mat-form-field>
+        <mat-label>ID de su departamento</mat-label>
+        <input matInput [(ngModel)]="idDepartamentoPersona" />
+    </mat-form-field>
+</mat-dialog-content>
+<mat-dialog-actions>
+    <button mat-button (click)="onNoClick()">No Thanks</button>
+    <button mat-button [mat-dialog-close]="persona()" cdkFocusInitial>Añadir</button>
+</mat-dialog-actions>
+
+
+<!-- Copyright 2025 Google LLC. All Rights Reserved.
+    Use of this source code is governed by an MIT-style license that
+    can be found in the LICENSE file at https://angular.io/license -->
